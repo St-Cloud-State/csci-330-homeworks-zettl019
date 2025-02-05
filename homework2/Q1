@@ -1,0 +1,109 @@
+Script started on 2025-02-04 20:17:27+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="219" LINES="15"]
+[0;32m@zettl019 [0m➜ [1;34m/workspaces/csci-330-homeworks-zettl019/homework2 [0;36m([1;31mmain[0;36m) [0m$ c[Ksbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (NOT (EQUAL 3 (ABS -3)))
+
+NIL
+* (/ (+ 8 12) 2)
+
+10
+* (+ (* 3 3) (* 4 4))
+
+25
+* (DEF   defun MILES-PER-GALLON (INITIAL-ODEMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED) (/ (- FINAL-ODOMETER-READING INITIAL-ODEMETER-T READING) GALLONS-CONSUMED))
+
+MILES-PER-GALLON
+* (THIRD      THIR    th  (third '(the quick brown fox))
+
+BROWN
+* (list 2 'and 2 'is     'is 4)
+
+(2 AND 2 IS 4)
+* (+ 1 (length (list tt  t t t)))
+
+5
+* co  (cons 'patrick '(seymour marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* (cons 'patrick (list 'seymour 'marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* (myster  y        defu    (defun myystery (x) (list (second x) (fis rst x)))
+
+MYYSTERY
+* (myystery '(dancing bear)) 
+
+(BEAR DANCING)
+* (myystery 'dancing 'bear)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  invalid number of arguments: 2
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MYYSTERY DANCING BEAR) [external]
+   source: (SB-INT:NAMED-LAMBDA MYYSTERY
+               (X)
+             (BLOCK MYYSTERY (LIST (SECOND X) (FIRST X))))
+0] 
+* myystery        (myyster  y '(zoiw  wie))
+
+(NIL ZOWIE)
+* (myystery (list 'first 'second))
+
+(SECOND FIRST)
+* (d defun speak (x y) (list 'all x 'is y))
+
+SPEAK
+* (list 'cons t nil)
+
+(CONS T NIL)
+* (eval (list 'cons t nil))
+
+(T)
+* e (eval (eval (list 'cons t nil)))
+; in: T
+;     (T)
+; 
+; caught WARNING:
+;   The function T is undefined, and its name is reserved by ANSI CL so that even
+;   if it were defined later, the code doing so would not be portable.
+; 
+; compilation unit finished
+;   Undefined function:
+;     T
+;   caught 1 WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+("undefined function")
+0] 
+* (eval nil)
+
+NIL
+* (list 'eval nil)
+
+(EVAL NIL)
+* (evasl  l (list 'eval nil))
+
+NIL
+* [0;32m@zettl019 [0m➜ [1;34m/workspaces/csci-330-homeworks-zettl019/homework2 [0;36m([1;31mmain[0;36m) [0m$ exit
+
+Script done on 2025-02-04 20:25:52+00:00 [COMMAND_EXIT_CODE="0"]
