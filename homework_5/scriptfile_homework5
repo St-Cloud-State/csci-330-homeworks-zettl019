@@ -1,0 +1,165 @@
+Script started on 2025-03-18 02:02:16+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="219" LINES="15"]
+[0;32m@zettl019 [0m➜ [1;34m/workspaces/csci-330-homeworks-zettl019/homework_5 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (loda  ad "parers   ser.lisp")
+
+; file: /workspaces/csci-330-homeworks-zettl019/homework_5/parser.lisp
+; in: DEFUN PARSE-S
+;     (PARSE-L TOKENS)
+; 
+; caught STYLE-WARNING:
+;   undefined function: PARSE-L
+; 
+; compilation unit finished
+;   Undefined function:
+;     PARSE-L
+;   caught 1 STYLE-WARNING condition
+
+T
+* (parse-input "ixoys")
+
+(I "i" (E (G "x") (EPRIME "o" (G "y") EPSILON)) (S "s"))
+* (parse-input "ixoyowdssbes")
+
+(I "i" (E (G "x") (EPRIME "o" (G "y") (EPRIME "o" (G "w") EPSILON)))
+ (S "d" (L "s" (LPRIME "s" EPSILON)) "b") "e" (S "s"))
+* (parse-input "iys")
+
+(I "i" (E (G "y") EPSILON) (S "s"))
+* (parse-input "iwoxs")
+
+(I "i" (E (G "w") (EPRIME "o" (G "x") EPSILON)) (S "s"))
+* (parse-input "ixoyses")
+
+(I "i" (E (G "x") (EPRIME "o" (G "y") EPSILON)) (S "s") "e" (S "s"))
+* (parse-input "ixdsb")
+
+(I "i" (E (G "x") EPSILON) (S "d" (L "s" EPSILON) "b"))
+* (parse-input "iyozows")
+
+(I "i" (E (G "y") (EPRIME "o" (G "z") (EPRIME "o" (G "w") EPSILON))) (S "s"))
+* (parse-input "ixoy")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected s or d but found end of input
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-S NIL)
+   source: (ERROR "Expected s or d but found ~A"
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* (parse-input "ixoyowdssbe")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected s or d but found end of input
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-S NIL)
+   source: (ERROR "Expected s or d but found ~A"
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* (parse-input "aixoys")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected i but found a
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MATCH "i" ("a" "i" "x" "o" "y" "s"))
+   source: (ERROR "Expected ~A but found ~A" TOKEN
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* (parse-input "ixooos")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected x, y, z, or w but found o
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-G ("o" "o" "s"))
+   source: (ERROR "Expected x, y, z, or w but found ~A"
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* (parse-input "ixoydbs")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected s but found b
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MATCH "s" ("b" "s"))
+   source: (ERROR "Expected ~A but found ~A" TOKEN
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* (parse-input "ixoyowdssbesx")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unconsumed tokens: (x)
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-INPUT "ixoyowdssbesx")
+   source: (ERROR "Unconsumed tokens: ~A" (CDR RESULT))
+0] 
+* (parse-input "ixds")
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Expected b but found end of input
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MATCH "b" NIL)
+   source: (ERROR "Expected ~A but found ~A" TOKEN
+                  (IF TOKENS
+                      (CAR TOKENS)
+                      "end of input"))
+0] 
+* [0;32m@zettl019 [0m➜ [1;34m/workspaces/csci-330-homeworks-zettl019/homework_5 [0;36m([1;31mmain[0;36m) [0m$ exit
+
+Script done on 2025-03-18 02:04:01+00:00 [COMMAND_EXIT_CODE="0"]

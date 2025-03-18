@@ -1,0 +1,19 @@
+List of strings tested in script file
+
+Valid strings:
+1. ixoys
+2. ixoyowdssbes
+3. iys
+4. iwoxs
+5. ixoyses
+6. ixdsb
+7. iyozows
+
+Invalid strings:
+1. ixoy
+2. ixoyowdssbe
+3. aixoys
+4. ixooos
+5. ixoydbs
+6. ixoyowdssbesx
+7. ixds
